@@ -148,21 +148,41 @@ FinanIA-Assistente-Financeiro-IA/
 
 ## 💬 Exemplos de perguntas
 
-O FinanIA pode responder perguntas como:
+O FinanIA foi testado com diferentes tipos de perguntas para verificar sua capacidade de consultar a base de conhecimento, realizar cálculos e lidar com informações que não estão disponíveis.
+
+### 📊 Análise de despesas
+
+**Pergunta:**
 
 > Quanto eu gastei com alimentação?
 
+O agente consulta as transações disponíveis e identifica os gastos relacionados à categoria de alimentação.
+
+![Teste de análise de despesas](docs/images/teste-alimentacao.jpg)
+
+---
+
+### 🧮 Cálculo do saldo
+
+**Pergunta:**
+
 > Qual é meu saldo no período?
 
-> Quais produtos financeiros estão disponíveis?
+O agente utiliza as receitas e despesas presentes na base para calcular o saldo do período.
 
-> O que é Tesouro Selic?
+![Teste de cálculo do saldo](docs/images/teste-saldo.jpg)
 
-> Qual é minha meta de reserva de emergência?
+---
 
-> Existe algum gasto com educação na minha base?
+### 🛡️ Tratamento de informação inexistente
 
-Quando uma informação não está presente nos dados fornecidos, o assistente deve informar que não possui aquele dado em vez de inventar uma resposta.
+**Pergunta:**
+
+> Quanto eu gastei com educação?
+
+Não existe uma transação de educação na base utilizada no projeto. O FinanIA deve informar que esse dado não está disponível, evitando inventar informações.
+
+![Teste de informação inexistente](docs/images/teste-dado-inexistente.jpg)
 
 ---
 
