@@ -64,3 +64,33 @@ O tom é educativo e profissional, mas não excessivamente formal. A FinanIA evi
 * **Fora do escopo:** "Posso ajudar com educação financeira, análise dos dados disponíveis e simulações. Essa solicitação está fora do meu escopo."
 
 * **Limitação:** "Essa informação não está disponível na minha base de conhecimento, então prefiro não inventar uma resposta."
+
+* ---
+
+## Arquitetura
+
+### Diagrama
+
+```mermaid
+flowchart TD
+    A[Usuário] --> B[Interface Streamlit]
+    B --> C[Aplicação Python]
+    C --> D[Base de Conhecimento]
+    D --> C
+    C --> E[LLM]
+    E --> F[Validação das Respostas]
+    F --> B
+    B --> A
+```
+
+### Componentes
+
+| Componente           | Descrição                                                                                                                  |
+| -------------------- | -------------------------------------------------------------------------------------------------------------------------- |
+| Interface            | Chatbot interativo desenvolvido com Streamlit                                                                              |
+| Aplicação            | Python responsável pelo processamento das perguntas, leitura dos dados e organização do contexto                           |
+| LLM                  | Modelo de linguagem utilizado para compreender as perguntas e gerar respostas em linguagem natural                         |
+| Base de Conhecimento | Arquivos CSV e JSON contendo dados financeiros simulados, histórico e informações utilizadas pelo agente                   |
+| Contexto             | Informações relevantes da base de conhecimento são fornecidas ao LLM junto com a pergunta do usuário                       |
+| Validação            | Regras de segurança e escopo verificam se a resposta está de acordo com os dados disponíveis e com as limitações do agente |
+
