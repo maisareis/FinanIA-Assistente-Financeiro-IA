@@ -94,3 +94,32 @@ flowchart TD
 | Contexto             | Informações relevantes da base de conhecimento são fornecidas ao LLM junto com a pergunta do usuário                       |
 | Validação            | Regras de segurança e escopo verificam se a resposta está de acordo com os dados disponíveis e com as limitações do agente |
 
+
+---
+
+## Segurança e Anti-Alucinação
+
+### Estratégias Adotadas
+
+* O agente utiliza prioritariamente as informações disponíveis na base de conhecimento fornecida pelo projeto.
+* O agente não deve inventar dados, valores, produtos ou informações que não estejam disponíveis em sua base ou que não possam ser calculados a partir dos dados fornecidos.
+* Quando não possuir informações suficientes para responder, o agente deve informar claramente sua limitação.
+* As respostas devem distinguir informações presentes nos dados de cálculos ou simulações realizados durante a interação.
+* O agente deve solicitar informações adicionais quando elas forem necessárias para realizar uma análise ou simulação.
+* O agente deve permanecer dentro do escopo de educação financeira, análise de gastos e simulações demonstrativas.
+* O agente não deve apresentar uma simulação como se fosse uma previsão ou garantia de resultado financeiro.
+* O agente não deve solicitar ou utilizar dados bancários reais, senhas, números de cartão ou outras informações financeiras sensíveis.
+* O agente não deve realizar operações financeiras ou transações em nome do usuário.
+* Recomendações relacionadas a investimentos devem ser tratadas de forma educativa e geral, sem apresentar uma decisão de investimento personalizada como recomendação definitiva.
+
+### Limitações Declaradas
+
+A FinanIA não substitui um profissional financeiro ou outro profissional especializado.
+
+O agente não realiza operações bancárias, não acessa contas bancárias reais e não utiliza dados financeiros sensíveis.
+
+As informações utilizadas pelo protótipo são simuladas ou provenientes da base de conhecimento disponibilizada para o projeto.
+
+As simulações financeiras possuem finalidade exclusivamente demonstrativa e não representam garantia de rentabilidade ou resultado futuro.
+
+Quando uma informação não estiver disponível na base de conhecimento ou não puder ser obtida de forma confiável a partir dos dados fornecidos, a FinanIA deverá informar que não possui dados suficientes em vez de criar uma resposta.
